@@ -8,6 +8,11 @@
 						Submitted by <%= pin.user.name %>
 					</p>
 				</div>
+				<div class="panel-footer">
+					<span class="glyphicon glyphicon-heart">
+						<%= pin.votes_for.size %>
+					</span>
+				</div>
 		</div>
 	<% end %>
 </div>

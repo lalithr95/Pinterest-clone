@@ -34,7 +34,7 @@ class PinsController < ApplicationController
 	end
 
 	def destroy
-		@pin.destory
+		@pin.destroy
 		redirect_to root_path
 	end
 

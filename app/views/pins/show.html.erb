@@ -21,8 +21,10 @@
 									<%= @pin.votes_for.size %>
 								</span>
 							<% end %>
-							<%= link_to "Edit", edit_pin_path(@pin), class: 'btn btn-default' %>
-							<%= link_to "Delete", pin_path, method: :delete, data: {confirm: "Are you sure?"}, class: 'btn btn-default' %>
+							<% if user_signed_in? %>
+								<%= link_to "Edit", edit_pin_path(@pin), class: 'btn btn-default' %>
+								<%= link_to "Delete", pin_path, method: :delete, data: {confirm: "Are you sure?"}, class: 'btn btn-default' %>
+							<% end %>
 						</div>
 					</div>
 				</div>

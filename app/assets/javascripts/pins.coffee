@@ -7,5 +7,5 @@ $ ->
 		$('#pins').masonry
 			itemSelector: '.box'
 			isFitWidth: true
-			isAnimated: !Modernizr.csstransitions
 			isRTL: true
+			columnWidth: 1

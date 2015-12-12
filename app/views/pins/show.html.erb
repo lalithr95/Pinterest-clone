@@ -16,7 +16,11 @@
 					<div class="col-md-6">
 						<div class="pull-right btn-group"
 							<br />
-							<%= link_to "Back", root_path, class: 'btn btn-info' %>
+							<%= link_to like_pin_path(@pin), method: :put, class: 'btn btn-default' do %>
+								<span class="glyphicon glyphicon-heart">
+									<%= @pin.votes_for.size %>
+								</span>
+							<% end %>
 							<%= link_to "Edit", edit_pin_path(@pin), class: 'btn btn-default' %>
 							<%= link_to "Delete", pin_path, method: :delete, data: {confirm: "Are you sure?"}, class: 'btn btn-default' %>
 						</div>

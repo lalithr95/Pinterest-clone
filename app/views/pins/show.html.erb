@@ -1,9 +1,28 @@
-<h1><%= @pin.title %></h1>
-<p><%= image_tag @pin.image.url(:medium) %></p>
-<p><%= @pin.description %></p>
-<p>Submitted by <%= @pin.user.email %></p>
-
-<br />
-<%= link_to "Back", root_path %>
-<%= link_to "Edit", edit_pin_path(@pin) %>
-<%= link_to "Delete", pin_path, method: :delete, data: {confirm: "Are you sure?"} %>
+<div id="pin_show" class="row">
+	<div class="col-md-8 col-md-offset-2">
+		<div class="panel panel-default">
+			<div class="panel-heading pin_image">
+				<p><%= image_tag @pin.image.url(:medium) %></p>
+			</div>
+			<div class="panel-body">
+				<h1><%= @pin.title %></h1>
+				<p class="description"><%= @pin.description %></p>
+			</div>
+			<div class="panel-footer">
+				<div class="row">
+					<div class="col-md-6">
+						<p class="user">Submitted by <%= @pin.user.name %></p>
+					</div>
+					<div class="col-md-6">
+						<div class="pull-right btn-group"
+							<br />
+							<%= link_to "Back", root_path, class: 'btn btn-info' %>
+							<%= link_to "Edit", edit_pin_path(@pin), class: 'btn btn-default' %>
+							<%= link_to "Delete", pin_path, method: :delete, data: {confirm: "Are you sure?"}, class: 'btn btn-default' %>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -30,7 +30,9 @@ gem 'masonry-rails'
 gem 'acts_as_votable', '~> 0.10.0'
 gem 'pg', group: :production
 gem 'rails_12factor', group: :production
-gem 'aws-sdk'
+gem 'aws-s3'
+gem 'aws-sdk', '< 2.0'
+# changes for paperclip s3 initialization error
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

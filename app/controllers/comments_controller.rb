@@ -9,6 +9,12 @@ class CommentsController < ApplicationController
 		end
 	end
 
+	def destroy
+		@comment = @post.comments.find(params[:id])
+		@comment.destroy
+		redirect_to pin_comments_path, notice: 'Deleted comment'
+	end
+
 	private
 
 	def comment_params

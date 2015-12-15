@@ -20,6 +20,7 @@ class PinsController < ApplicationController
 	end
 
 	def show
+		@comment = @pin.comments
 	end
 
 	def edit

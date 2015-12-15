@@ -2,10 +2,10 @@ class CommentsController < ApplicationController
 	before_action :set_post
 
 	def create
-		@comment = @pin.comment.build(comment_params)
+		@comment = @pin.comments.build(comment_params)
 		@comment.user_id = current_user
 		if @comment.save
-			redirect_to pin_comment_path, notice: 'Commented'
+			redirect_to pin_path(@pin), notice: 'Commented'
 		end
 	end
 
@@ -22,6 +22,6 @@ class CommentsController < ApplicationController
 	end
 
 	def set_post
-		@pin = Pin.find(param[:pin_id])
+		@pin = current_user.pins.find(params[:pin_id])
 	end
 end

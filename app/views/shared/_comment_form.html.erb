@@ -1,0 +1,8 @@
+<%= simple_form_for [@pin, @pin.comments.new], html: { class: 'form-horizontal' } do |f| %>
+	<div class="form-group">
+		<%= f.input :description, as: :text, input_html: { class: 'form-control' } %>
+	</div>
+	<div class="form-group">
+		<%= f.button :submit, class: 'btn btn-info' %>
+	</div>
+<% end %>

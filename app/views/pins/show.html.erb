@@ -1,5 +1,5 @@
 <div id="pin_show" class="row">
-	<div class="col-md-8 col-md-offset-2">
+	<div class="col-md-8 col-md-offset-2 w3-card-8">
 		<div class="panel panel-default">
 			<div class="panel-heading pin_image">
 				<p><%= image_tag @pin.image.url(:medium) %></p>
@@ -28,17 +28,16 @@
 						</div>
 					</div>
 				</div>
-				<div class="row">
-					<% @comment.each do |c| %>
-						<div class="row">
-							<%= c.description %>s
-						</div>
-					<% end %>
-				</div>
-				<div class="row">
-					<%= render 'shared/comment_form' %>
-				</div>
 			</div>
 		</div>
+		<div class="col-md-8 col-md-offset-2">
+			<% @comment.each do |c| %>
+					<%= c.description %>
+			<% end %>
+		</div>
+		<div class="col-md-8 col-md-offset-2">
+			<%= render 'shared/comment_form' %>
+		</div>
+		
 	</div>
 </div>

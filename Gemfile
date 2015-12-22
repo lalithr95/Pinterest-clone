@@ -32,6 +32,8 @@ gem 'pg', group: :production
 gem 'rails_12factor', group: :production
 gem 'aws-s3'
 gem 'aws-sdk', '< 2.0'
+gem "brakeman", :require => false
+
 # changes for paperclip s3 initialization error
 gem 'newrelic_rpm'
 
